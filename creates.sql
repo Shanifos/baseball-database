@@ -2,21 +2,21 @@ create database baseball;
 USE baseball;
 create table teams(
  teamID INT NOT NULL auto_increment,
- teamLocation varchar(255) ,
- teamMascot varchar(255) ,
- teamAbbr varchar(255) ,
- league enum('NL','AL'),
- division enum('west','east','central'),
+ teamLocation VARCHAR(255) ,
+ teamMascot VARCHAR((255) ,
+ teamAbbr VARCHAR((255) ,
+ league ENUM('NL','AL'),
+ division ENUM('west','east','central'),
  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 deletedAt DATETIME, 
- primary key(teamID)
+ PRIMARY KEY(teamID)
  );
  
  
  create table players(
  playerID INT NOT Null auto_increment,
- teamID int,
+ teamID INT,
  firstName VARCHAR(255),
  lastName VARCHAR(255),
  position ENUM('SP','1B','2B','3B','CF','LF', 'RF','C','SS'),
@@ -47,42 +47,42 @@ FOREIGN KEY(awayTeam) references teams(teamID)
 
 create table hitterStats(
 playerID INT NOT NULL,
-gameID int not null,
-atBats int default 0,
-runs int default 0,
-hits int default 0,
-doubles int default 0,
-triples int default 0,
-homeRuns int default 0,
-runsBattedIn int default 0,
-walks int default 0,
-strikeOut int default 0,
-steals int default 0,
+gameID INT not null,
+atBats INT default 0,
+runs INT default 0,
+hits INT default 0,
+doubles INT default 0,
+triples INT default 0,
+homeRuns INT default 0,
+runsBattedIn INT default 0,
+walks INT default 0,
+strikeOut INT default 0,
+steals INT default 0,
 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 deletedAt DATETIME,
 
-primary key(playerID,gameID),
-foreign key(playerID) references players(playerID),
-foreign key(gameID) references games(gameID)
+PRIMARY KEY(playerID,gameID),
+FOREIGN KEY(playerID) references players(playerID),
+FOREIGN KEY(gameID) references games(gameID)
 
 );
 
 create table pitcherStats(
-playerID int not null,
-gameID int not null,
-wins int default 0,
-innerPitched int default 0,
-hits int default 0,
+playerID INT not null,
+gameID INT not null,
+wins INT default 0,
+innerPitched INT default 0,
+hits INT default 0,
 runs int default 0,
-earnedRuns int default 0,
-strikeOuts int default 0,
-walks int default 0,
+earnedRuns INT default 0,
+strikeOuts INT default 0,
+walks INT default 0,
 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 deletedAt DATETIME,
-primary key(playerID,gameID),
-foreign key(playerID) references players(playerID),
-foreign key(gameID) references games(gameID)
+PRIMARY KEY(playerID,gameID),
+FOREIGN KEY(playerID) references players(playerID),
+FOREIGN KEY(gameID) references games(gameID)
 );
 
