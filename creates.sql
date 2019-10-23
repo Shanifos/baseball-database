@@ -71,8 +71,8 @@ FOREIGN KEY(gameID) references games(gameID)
 create table pitcherStats(
 playerID INT not null,
 gameID INT not null,
-wins INT default 0,
-innerPitched INT default 0,
+wins tinyint default 0,
+innerPitched decimal(2,1),
 hits INT default 0,
 runs int default 0,
 earnedRuns INT default 0,
