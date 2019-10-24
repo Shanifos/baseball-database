@@ -63,12 +63,10 @@ createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP,
 deletedAt DATETIME,
 
-PRIMARY KEY(playerID,gameID),
+PRIMARY KEY(playerID,gameID,teamID),
 FOREIGN KEY(playerID) references players(playerID),
-FOREIGN KEY(gameID) references games(gameID)
+FOREIGN KEY(gameID) references games(gameID),
  FOREIGN KEY(teamID) references teams(teamID)
-
-
 );
 
 create table pitcherStats(
@@ -85,9 +83,9 @@ walks INT default 0,
 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP,
 deletedAt DATETIME,
-PRIMARY KEY(playerID,gameID),
+PRIMARY KEY(playerID,gameID,teamID),
 FOREIGN KEY(playerID) references players(playerID),
-FOREIGN KEY(gameID) references games(gameID)
+FOREIGN KEY(gameID) references games(gameID),
  FOREIGN KEY(teamID) references teams(teamID)
 
 );
