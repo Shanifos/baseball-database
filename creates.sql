@@ -48,7 +48,7 @@ FOREIGN KEY(awayTeam) references teams(teamID)
 create table hitterStats(
 playerID INT NOT NULL,
 gameID INT not null,
-teamsID INT,
+teamID INT,
 atBats INT default 0,
 runs INT default 0,
 hits INT default 0,
@@ -72,7 +72,7 @@ FOREIGN KEY(gameID) references games(gameID),
 create table pitcherStats(
 playerID INT not null,
 gameID INT not null,
- teamsID INT,
+teamID INT,
 wins tinyint default 0,
 innerPitched decimal(2,1),
 hits INT default 0,
