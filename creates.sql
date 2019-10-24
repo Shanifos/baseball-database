@@ -6,7 +6,7 @@ create table teams(
  teamMascot VARCHAR(255) ,
  teamAbbr VARCHAR(255) ,
  league ENUM('NL','AL'),
- division ENUM('west','east','central'),
+ division ENUM('West','East','Central'),
  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP,
 deletedAt DATETIME, 
