@@ -3,8 +3,8 @@ USE baseball;
 create table teams(
  teamID INT NOT NULL auto_increment,
  teamLocation VARCHAR(255) ,
- teamMascot VARCHAR((255) ,
- teamAbbr VARCHAR((255) ,
+ teamMascot VARCHAR(255) ,
+ teamAbbr VARCHAR(255) ,
  league ENUM('NL','AL'),
  division ENUM('west','east','central'),
  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
